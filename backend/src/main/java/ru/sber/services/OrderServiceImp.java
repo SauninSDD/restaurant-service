@@ -132,7 +132,6 @@ public class OrderServiceImp implements OrderService {
         }
     }
 
-    @Transactional
     private void updateOrderTokens() {
         log.info("Обновление токена заказа");
 
@@ -143,7 +142,7 @@ public class OrderServiceImp implements OrderService {
         tokenBody.add("grant_type", "password");
         tokenBody.add("client_id", "login-app");
         tokenBody.add("username", "user");
-        tokenBody.add("password", "11111");
+        tokenBody.add("password", "password");
 
         HttpEntity<MultiValueMap<String, String>> tokenEntity = new HttpEntity<>(tokenBody, tokenHeaders);
 
